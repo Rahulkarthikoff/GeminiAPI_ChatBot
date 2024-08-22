@@ -19,12 +19,14 @@
 ###################################################################################################
 import requests
 import streamlit as st
+import os
+API_TOKEN = os.getenv('HUGGINGFACE_API_TOKEN')
 
 
 st.title("Image - Captioning")
 
 API_URL = "https://api-inference.huggingface.co/models/Salesforce/blip-image-captioning-large"
-headers = {"Authorization": "Bearer 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"}
+headers = {"Authorization": f"Bearer {API_TOKEN}"}
 
 def query(file):
     if file is not None:
