@@ -2,10 +2,12 @@ import streamlit as st
 import os
 import google.generativeai as genai
 from PIL import Image
+import os
+GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
 
 # Initialize Gemini-Pro 
-GOOGLE_GEMINI_KEY = "AIzaSyAsK0m7zG44ybiRqR_5-2XAYjrXURdRREo"
-genai.configure(api_key=GOOGLE_GEMINI_KEY)
+#GOOGLE_GEMINI_KEY = "AIzaSyAsK0m7zG44ybiRqR_5-2XAYjrXURdRREo"
+genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-pro')
 
 # Gemini uses 'model' for assistant; Streamlit uses 'assistant'
