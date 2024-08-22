@@ -1,9 +1,9 @@
 import requests
 import streamlit as st
 import base64
-
+API_TOKEN = os.getenv('HUGGINGFACE_API_TOKEN')
 API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0"
-headers = {"Authorization": "Bearer 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"}
+headers = {"Authorization": f"Bearer {API_TOKEN}"}
 
 st.title('Text-to-Image Bot')
 
